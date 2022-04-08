@@ -1,0 +1,16 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.dist/
+node_modules/
+dist/
+
+.idea
+.vscode
+.temp
+.rn_temp/
+.DS_Store
+.eslintcache
+.babelrc
+.history/*
+
+yarn-error.log
+yarn.lock
+package-lock.json
