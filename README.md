@@ -1,7 +1,7 @@
 <!--
- * @Author: your name
+ * @Author: lucia
  * @Date: 2022-04-06 23:23:30
- * @LastEditTime: 2022-04-07 16:51:59
+ * @LastEditTime: 2022-04-10 23:20:13
  * @LastEditors: your name
  * @Description: 
  * @FilePath: /taro3-weapp/README.md
@@ -54,8 +54,13 @@ node版本跟改为16 `nvm use 16`
 ## 命名规范
 
 1. 文件和夹命名：
+   - 普通文件：
    规则: 小驼峰 
    eg: 我的页面文件夹 personalCenter
+   - components组件
+   规则: 大驼峰
+   eg: 主题 ThemeUI
+
 
 2. 分包命名：       
     规则: spk开头的小驼峰 

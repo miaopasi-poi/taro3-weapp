@@ -1,5 +1,13 @@
-// const ThemesGeneratorPlugin = require('themes-switch/ThemesGeneratorPlugin');
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+/*
+ * @Author: your name
+ * @Date: 2022-04-06 23:21:15
+ * @LastEditTime: 2022-04-11 00:16:39
+ * @LastEditors: your name
+ * @Description: 
+ * @FilePath: /taro3-weapp/config/index.js
+ */
+
+const path = require('path')
 const config = {
   projectName: 'taro3-weapp',
   date: '2022-4-6',
@@ -12,6 +20,9 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: [],
+  alias: {
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+  },
   defineConstants: {
   },
   copy: {
@@ -22,20 +33,16 @@ const config = {
   },
   framework: 'react',
   mini: {
-    // webpackChain(chain, webpack){
-    //   chain.module.rule('mini-css-extract-plugin')
-    //   .test(/\.scss$/)
-    //   .use([MiniCssExtractPlugin.loader, 'css-loader', 'scss-loader'])
-    //   .loader(MiniCssExtractPlugin.loader);
-
-    //   chain.plugin('themes-switch/ThemesGeneratorPlugin')
-    //   .use(new ThemesGeneratorPlugin({
-    //     srcDir: 'src',
-    //     themesDir: 'src/assets/themes',
-    //     outputDir: 'static/css',
-    //     defaultStyleName: 'default.scss'
-    //   }));
-    // },
+    webpackChain(chain, webpack) {
+      // linaria/loader 选项详见 https://github.com/callstack/linaria/blob/master/docs/BUNDLERS_INTEGRATION.md#webpack
+      chain.module
+        .rule('script')
+        .use('linariaLoader')
+        .loader('linaria/loader')
+        .options({
+          sourceMap: process.env.NODE_ENV !== 'production',
+        })
+    },
     postcss: {
       pxtransform: {
         enable: true,
@@ -50,13 +57,13 @@ const config = {
         }
       },
       cssModules: {
-        enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+        enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
-    }
+    },
   },
   h5: {
     publicPath: '/',
@@ -74,6 +81,15 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    webpackChain(chain, webpack) {
+      chain.module
+        .rule('script')
+        .use('linariaLoader')
+        .loader('linaria/loader')
+        .options({
+          sourceMap: process.env.NODE_ENV !== 'production',
+        })
     }
   }
 }
