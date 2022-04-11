@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-10 23:56:40
- * @LastEditTime: 2022-04-11 00:15:25
+ * @LastEditTime: 2022-04-11 10:45:27
  * @LastEditors: your name
  * @Description: 
  * @FilePath: /taro3-weapp/src/pages/personalCenter/ThemeTriggerSwitch.tsx
@@ -17,8 +17,11 @@ interface IProps {}
 
 const ThemeTriggerSwitch: FC<IProps> = (): ReactElement => {
   const [{ mode, theme }, setTheme] = useTheme();
-  const isLight = useMemo(() => mode === ThemeMode.LIGHT, [mode]);
-
+  console.log('mode===',mode)
+  console.log('theme.primary===',theme.primary)
+  const isLight = useMemo(() => mode === ThemeMode.DARK, [mode]);
+  
+  console.log('isLight===',isLight)
   const handleChangeThemeMode = useCallback(() => {
     const themeState = isLight ? DarkTheme : LightTheme;
     setTheme(themeState);
@@ -34,7 +37,7 @@ const ThemeTriggerSwitch: FC<IProps> = (): ReactElement => {
       frontColor: color,
     });
   }, [isLight, setTheme]);
-
+  
   return (
     <Container>
       <Text>{isLight ? "夜间" : "日间"}模式</Text>

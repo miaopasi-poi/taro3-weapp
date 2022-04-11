@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
-const darkPrimary = "#666666";
-const lightPrimary = "#5511ff";
+const darkPrimary = "red";
+const lightPrimary = "grey";
 const dark = "#000000";
 const light = "#ffffff";
 
@@ -14,6 +14,7 @@ interface ITheme {
   color: string;
   background: string;
 }
+
 
 export enum ThemeMode {
   DARK = "dark",
@@ -57,15 +58,18 @@ export const DarkTheme: ThemeProps = {
 
 const Theme = createContext(LightTheme);
 
-const HUIProvide = ({ children }) => {
+export const ThemeProvider = ({ children }) => {
   const theme = useState<ThemeProps>(LightTheme);
   //@ts-ignore
   return <Theme.Provider value={theme}>{children}</Theme.Provider>;
 };
 
-export const useSetTheme = () => useContext(Theme)[1];
-export const useThemeState = (): ThemeProps => useContext(Theme)[0];
-export const useTheme = (): [ThemeProps, React.Dispatch<React.SetStateAction<ThemeProps>>] => useContext(Theme);
+export const useSetTheme = () => useContext(Theme);
 
-export default HUIProvide;
+export const useThemeState = (): ThemeProps => useContext(Theme);
+
+export const useTheme = (): [ThemeProps, React.Dispatch<React.SetStateAction<ThemeProps>>] => {
+  return [useContext<any>(Theme), useThemeState]
+};
+
 

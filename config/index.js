@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-06 23:21:15
- * @LastEditTime: 2022-04-11 00:16:39
+ * @LastEditTime: 2022-04-11 10:03:00
  * @LastEditors: your name
  * @Description: 
  * @FilePath: /taro3-weapp/config/index.js
@@ -41,6 +41,12 @@ const config = {
         .loader('linaria/loader')
         .options({
           sourceMap: process.env.NODE_ENV !== 'production',
+        })
+        // console.log('chain====', chain.resolve)
+        chain.merge({
+          resolve: {
+            extensions: ['.tsx', '.ts', '.d.ts', '.jsx', '.js', '.scss'],
+          }
         })
     },
     postcss: {
