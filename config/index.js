@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2022-04-06 23:21:15
- * @LastEditTime: 2022-04-11 10:03:00
- * @LastEditors: your name
+ * @LastEditTime: 2022-04-11 21:54:48
+ * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/config/index.js
  */
@@ -70,6 +70,7 @@ const config = {
         }
       }
     },
+    debugReact: true,
   },
   h5: {
     publicPath: '/',

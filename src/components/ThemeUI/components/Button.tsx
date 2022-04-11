@@ -1,19 +1,19 @@
 /*
- * @Author: your name
+ * @Author: liuxi
  * @Date: 2022-04-11 00:01:38
- * @LastEditTime: 2022-04-11 09:30:54
- * @LastEditors: your name
+ * @LastEditTime: 2022-04-11 23:05:34
+ * @LastEditors: liuxi
  * @Description: 
- * @FilePath: /taro3-weapp/src/components/BUI/Button.tsx
+ * @FilePath: /taro3-weapp/src/components/ThemeUI/components/Button.tsx
  */
-import { ComponentType } from "react";
-import { Button as TButton, ButtonProps } from "@tarojs/components";
-import { useThemeState } from "./theme";
+import { ComponentType } from "react"
+import { Button as TButton, ButtonProps } from "@tarojs/components"
+import { useThemeState } from "../theme"
 
-type TButtonProps = ComponentType<ButtonProps & { width?: string; bold?: boolean }>;
+type TButtonProps = ComponentType<ButtonProps & { width?: string; bold?: boolean }>
 
 export const Button: TButtonProps = ({ children, style, bold, width, ...props }) => {
-  const { theme } = useThemeState();
+  const { theme } = useThemeState()
 
   return (
     <TButton
@@ -28,6 +28,6 @@ export const Button: TButtonProps = ({ children, style, bold, width, ...props })
     >
       {children}
     </TButton>
-  );
-};
+  )
+}
 
