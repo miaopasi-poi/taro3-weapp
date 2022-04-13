@@ -1,7 +1,7 @@
 <!--
  * @Author: lucia
  * @Date: 2022-04-06 23:23:30
- * @LastEditTime: 2022-04-13 15:23:28
+ * @LastEditTime: 2022-04-13 17:23:23
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/README.md
@@ -33,7 +33,7 @@
 #### 1. 安装 @tarojs/cli
 检查是否安装 `taro -v`
 安装 `npm install @tarojs/cli@3.4.4 -g`
-node版本跟改为16 `nvm use 16`
+node版本跟改为16 `nvm use 14`
 安装node-sass 
 ```
 yarn add node-sass

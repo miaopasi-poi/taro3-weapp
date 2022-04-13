@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-06 23:21:15
- * @LastEditTime: 2022-04-13 15:38:55
+ * @LastEditTime: 2022-04-13 17:33:56
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/config/index.js
@@ -19,7 +19,10 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-sass'],
+  plugins: [
+    '@tarojs/plugin-sass', 
+    '@tarojs/plugin-terser'
+  ],
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
   },
@@ -52,7 +55,6 @@ const config = {
         .options({
           sourceMap: process.env.NODE_ENV !== 'production',
         })
-        // console.log('chain====', chain.resolve)
         chain.merge({
           resolve: {
             extensions: ['.tsx', '.ts', '.d.ts', '.jsx', '.js', '.scss'],
@@ -102,15 +104,6 @@ const config = {
         }
       }
     },
-    webpackChain(chain, webpack) {
-      chain.module
-        .rule('script')
-        .use('linariaLoader')
-        .loader('linaria/loader')
-        .options({
-          sourceMap: process.env.NODE_ENV !== 'production',
-        })
-    }
   }
 }
 
