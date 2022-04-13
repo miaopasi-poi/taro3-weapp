@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-06 23:21:15
- * @LastEditTime: 2022-04-11 21:54:48
+ * @LastEditTime: 2022-04-13 15:38:55
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/config/index.js
@@ -19,7 +19,7 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
+  plugins: ['@tarojs/plugin-sass'],
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
   },
@@ -32,7 +32,17 @@ const config = {
     }
   },
   framework: 'react',
+  terser: {
+    enable: true,
+  },
   mini: {
+    optimizeMainPackage: {
+      enable: true,
+      exclude: [
+        path.resolve(__dirname, 'moduleName.js'),
+        (module) => module.resource.indexOf('moduleName') >= 0
+      ]
+    },
     webpackChain(chain, webpack) {
       // linaria/loader 选项详见 https://github.com/callstack/linaria/blob/master/docs/BUNDLERS_INTEGRATION.md#webpack
       chain.module
@@ -70,7 +80,10 @@ const config = {
         }
       }
     },
-    debugReact: true,
+    debugReact: true, 
+    sassLoaderOption: {
+      implementation: require("node-sass")
+    }
   },
   h5: {
     publicPath: '/',

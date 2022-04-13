@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2022-04-06 23:21:15
- * @LastEditTime: 2022-04-07 17:24:19
- * @LastEditors: your name
+ * @LastEditTime: 2022-04-13 14:18:23
+ * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/src/app.config.ts
  */

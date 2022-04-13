@@ -8,8 +8,7 @@
  */
 import { Component } from 'react'
 import ThemeTriggerSwitch from './ThemeTriggerSwitch';
-import { Container, View, Text } from '@/components/BUI';
-import { ThemeProvider } from '@/components/BUI/theme';
+import { Container, View, Text } from '@/components/ThemeUI';
 
 export default class Index extends Component {
 

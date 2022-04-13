@@ -1,16 +1,16 @@
 /*
  * @Author: your name
  * @Date: 2022-04-11 00:00:23
- * @LastEditTime: 2022-04-11 23:05:31
+ * @LastEditTime: 2022-04-13 14:29:45
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/src/components/ThemeUI/components/Container.tsx
  */
 import { setNavigationBarColor, useDidShow } from "@tarojs/taro"
 import { useThemeState } from "../theme"
-import View, { IProps } from "./View"
+import { IProps, View } from "./View"
 
-const Container: IProps = (props) => {
+export const Container: IProps = (props) => {
   const { theme } = useThemeState()
   useDidShow(() => {
     // 导航栏不会随主题变化只会在当前的页面生效
@@ -23,5 +23,3 @@ const Container: IProps = (props) => {
 
   return <View {...props} />
 }
-
-export default Container

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-10 23:56:40
- * @LastEditTime: 2022-04-11 22:43:23
+ * @LastEditTime: 2022-04-13 14:42:01
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/src/pages/personalCenter/ThemeTriggerSwitch.tsx
@@ -10,8 +10,7 @@ import { styled } from "linaria/react";
 import { setNavigationBarColor } from "@tarojs/taro";
 import { Switch, View } from "@tarojs/components";
 import { FC, ReactElement, useCallback, useMemo } from "react";
-import { ThemeMode, useTheme, LightTheme, DarkTheme } from "@/components/BUI/theme";
-import { Text } from "@/components/BUI";
+import { ThemeMode, useTheme, LightTheme, DarkTheme, Text } from "@/components/ThemeUI";
 
 interface IProps {}
 

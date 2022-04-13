@@ -1,8 +1,8 @@
 <!--
  * @Author: lucia
  * @Date: 2022-04-06 23:23:30
- * @LastEditTime: 2022-04-10 23:20:13
- * @LastEditors: your name
+ * @LastEditTime: 2022-04-13 15:23:28
+ * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/README.md
 -->
@@ -34,6 +34,10 @@
 检查是否安装 `taro -v`
 安装 `npm install @tarojs/cli@3.4.4 -g`
 node版本跟改为16 `nvm use 16`
+安装node-sass 
+```
+yarn add node-sass
+```
 
 #### 2.安装项目依赖
 `npm install`
@@ -55,15 +59,15 @@ node版本跟改为16 `nvm use 16`
 
 1. 文件和夹命名：
    - 普通文件：
-   规则: 小驼峰 
+   规则: 驼峰命名
    eg: 我的页面文件夹 personalCenter
    - components组件
-   规则: 大驼峰
+   规则: 帕斯卡命名
    eg: 主题 ThemeUI
 
 
 2. 分包命名：       
-    规则: spk开头的小驼峰 
+    规则: 驼峰命名 且 以spk开头
     eg: 首页文件分包文件夹 spkHome
 
 3. 样式选择器命名 
@@ -79,7 +83,7 @@ node版本跟改为16 `nvm use 16`
         containerWrap
 
 4.常量命名
-    规则: 只能由 英文大写单词/字母、_ 任意一种或几种组合成
+    规则: 蛇形命名（只能由 英文大写单词/字母、_ 任意一种或几种组合成）
     eg: 
         USER_AGENT_TYPE
         USERNAME
