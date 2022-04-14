@@ -1,13 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2022-04-06 23:21:15
- * @LastEditTime: 2022-04-13 17:33:56
+ * @LastEditTime: 2022-04-14 09:37:53
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/config/index.js
  */
 
 const path = require('path')
+
 const config = {
   projectName: 'taro3-weapp',
   date: '2022-4-6',
@@ -21,7 +22,6 @@ const config = {
   outputRoot: 'dist',
   plugins: [
     '@tarojs/plugin-sass', 
-    '@tarojs/plugin-terser'
   ],
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
@@ -35,17 +35,7 @@ const config = {
     }
   },
   framework: 'react',
-  terser: {
-    enable: true,
-  },
   mini: {
-    optimizeMainPackage: {
-      enable: true,
-      exclude: [
-        path.resolve(__dirname, 'moduleName.js'),
-        (module) => module.resource.indexOf('moduleName') >= 0
-      ]
-    },
     webpackChain(chain, webpack) {
       // linaria/loader 选项详见 https://github.com/callstack/linaria/blob/master/docs/BUNDLERS_INTEGRATION.md#webpack
       chain.module
@@ -60,6 +50,26 @@ const config = {
             extensions: ['.tsx', '.ts', '.d.ts', '.jsx', '.js', '.scss'],
           }
         })
+
+        // if(process.env.NODE_ENV !== 'development'){//只在生产环境下生效
+        //     chain.mode("production");
+        //     chain.optimization.minimize(true);
+        //     chain.plugin("terser").use(TerserPlugin, [
+        //       {
+        //         cache: true,
+        //         extractComments: false,
+        //         parallel: true,
+        //         terserOptions: {
+        //           output: {
+        //             comments: false
+        //           },
+        //           compress: {
+        //             pure_funcs: ["console.log"],//过滤掉打印
+        //           }
+        //         }
+        //       }
+        //   ]); 
+        // }
     },
     postcss: {
       pxtransform: {
