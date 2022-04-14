@@ -1,14 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2022-04-06 23:21:15
- * @LastEditTime: 2022-04-14 15:44:53
+ * @LastEditTime: 2022-04-14 16:17:10
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/config/index.js
  */
 
 const path = require('path')
-
 const config = {
   projectName: 'taro3-weapp',
   date: '2022-4-6',
@@ -20,11 +19,7 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [
-    '@tarojs/plugin-sass', 
-    // '@tarojs/plugin-terser' 
-  ],
-  // terser: { enable: true },
+  plugins: ['@tarojs/plugin-sass'],
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
   },
@@ -37,7 +32,17 @@ const config = {
     }
   },
   framework: 'react',
+  terser: {
+    enable: true,
+  },
   mini: {
+    optimizeMainPackage: {
+      enable: true,
+      exclude: [
+        path.resolve(__dirname, 'moduleName.js'),
+        (module) => module.resource.indexOf('moduleName') >= 0
+      ]
+    },
     webpackChain(chain, webpack) {
       // linaria/loader 选项详见 https://github.com/callstack/linaria/blob/master/docs/BUNDLERS_INTEGRATION.md#webpack
       chain.module
@@ -47,31 +52,12 @@ const config = {
         .options({
           sourceMap: process.env.NODE_ENV !== 'production',
         })
+        // console.log('chain====', chain.resolve)
         chain.merge({
           resolve: {
             extensions: ['.tsx', '.ts', '.d.ts', '.jsx', '.js', '.scss'],
           }
         })
-
-        // if(process.env.NODE_ENV !== 'development'){//只在生产环境下生效
-        //     chain.mode("production");
-        //     chain.optimization.minimize(true);
-        //     chain.plugin("terser").use(TerserPlugin, [
-        //       {
-        //         cache: true,
-        //         extractComments: false,
-        //         parallel: true,
-        //         terserOptions: {
-        //           output: {
-        //             comments: false
-        //           },
-        //           compress: {
-        //             pure_funcs: ["console.log"],//过滤掉打印
-        //           }
-        //         }
-        //       }
-        //   ]); 
-        // }
     },
     postcss: {
       pxtransform: {
@@ -116,6 +102,15 @@ const config = {
         }
       }
     },
+    webpackChain(chain, webpack) {
+      chain.module
+        .rule('script')
+        .use('linariaLoader')
+        .loader('linaria/loader')
+        .options({
+          sourceMap: process.env.NODE_ENV !== 'production',
+        })
+    }
   }
 }
 
