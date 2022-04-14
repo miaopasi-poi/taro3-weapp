@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-10 23:59:45
- * @LastEditTime: 2022-04-13 14:30:00
+ * @LastEditTime: 2022-04-14 10:00:12
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/src/components/ThemeUI/components/View.tsx
@@ -15,7 +15,7 @@ export type IProps = ComponentType<ViewProps & { fill?: boolean }>
 
 export const View: IProps = ({ children, fill, style, ...props }): ReactElement => {
   const { theme } = useThemeState()
-  console.log('View====', theme)
+
   return (
     <TView
       style={{

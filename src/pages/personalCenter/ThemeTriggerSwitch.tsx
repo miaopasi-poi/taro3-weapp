@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-10 23:56:40
- * @LastEditTime: 2022-04-13 14:42:01
+ * @LastEditTime: 2022-04-14 09:56:05
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/src/pages/personalCenter/ThemeTriggerSwitch.tsx
@@ -32,7 +32,7 @@ const ThemeTriggerSwitch: FC<IProps> = (): ReactElement => {
   
   return (
     <Container>
-      <Text>{isLight ? "夜间" : "日间"}模式</Text>
+      <Text>{!isLight ? "夜间" : "日间"}模式</Text>
       <Switch color={theme.primary} checked={isLight} onChange={handleChangeThemeMode} />
     </Container>
   );
