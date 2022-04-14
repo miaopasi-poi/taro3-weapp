@@ -1,9 +1,9 @@
 /*
  * @Author: your name
  * @Date: 2022-04-10 23:56:40
- * @LastEditTime: 2022-04-14 09:56:05
+ * @LastEditTime: 2022-04-14 10:26:21
  * @LastEditors: liuxi
- * @Description: 
+ * @Description: 主题切换控制组件
  * @FilePath: /taro3-weapp/src/pages/personalCenter/ThemeTriggerSwitch.tsx
  */
 import { styled } from "linaria/react";

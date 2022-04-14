@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-06 23:21:15
- * @LastEditTime: 2022-04-14 09:37:53
+ * @LastEditTime: 2022-04-14 15:44:53
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/config/index.js
@@ -22,7 +22,9 @@ const config = {
   outputRoot: 'dist',
   plugins: [
     '@tarojs/plugin-sass', 
+    // '@tarojs/plugin-terser' 
   ],
+  // terser: { enable: true },
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
   },

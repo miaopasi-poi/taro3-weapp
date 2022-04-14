@@ -1,14 +1,15 @@
 /*
  * @Author: your name
  * @Date: 2022-04-07 16:22:39
- * @LastEditTime: 2022-04-14 09:40:26
+ * @LastEditTime: 2022-04-14 15:46:33
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/src/pages/personalCenter/index.tsx
  */
 import { Component } from 'react'
 import ThemeTriggerSwitch from './ThemeTriggerSwitch';
-import { Container, View, Text } from '@/components/ThemeUI';
+import { Container, View } from '@/components/ThemeUI';
+import { UserInformation } from './UserInformation';
 
 definePageConfig({
   navigationBarTitleText: '个人中心'
@@ -29,7 +30,7 @@ export default class Index extends Component {
     return (
         <Container fill>
           <View className='index'>
-            <Text>个人中心</Text>
+            <UserInformation/>
             <ThemeTriggerSwitch/>
           </View>
         </Container>
