@@ -1,7 +1,7 @@
 <!--
  * @Author: lucia
  * @Date: 2022-04-06 23:23:30
- * @LastEditTime: 2022-04-13 17:23:23
+ * @LastEditTime: 2022-04-15 13:05:41
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/README.md
@@ -53,7 +53,50 @@ yarn add node-sass
 关闭自动压缩混淆
 
 ## 目录结构
-待补全
+|-- fe-mp-assistant
+    |-- config                           Taro编译配置
+    |   |-- dev.js                         开发时配置
+    |   |-- index.js                       默认配置
+    |   |-- prod.js                        打包时配置
+    |-- src
+    |   |-- app.scss                     项目总通用样式
+    |   |-- app.tsx                      项目入口文件
+    |   |-- index.html
+    |   |-- serives                         服务接口
+    |   |   |-- data.d.ts                   该目录下的ts类型定义
+    |   |   |-- index.ts
+    |   |   |-- modules
+    |   |       |-- ...*.ts
+    |   |-- assets                       静态资源（包含icon、图片）
+    |   |   |-- common                     存放全局通用资源
+    |   |-- components                   公共组件目录
+    |   |-- config                       项目配置
+    |   |   |-- index.ts
+    |   |-- styles                         公用样式文件、主包样式文件
+    |   |   |-- common.scss                公用样式文件（已在全局引入）
+    |   |   |-- custom-variables.scss      自定义主题样式文件（已在全局引入）
+    |   |   |-- main                       主包样式文件
+    |   |       |-- ...*.scss
+    |   |-- hooks                        公用hooks目录
+    |   |   |-- useIphoneX.tsx
+    |   |   |-- useScroll.ts
+    |   |-- pages                        页面文件目录
+    |   |-- store                        redux 目录
+    |   |   |-- index.ts
+    |   |   |-- actions
+    |   |   |-- middlewares
+    |   |   |-- reducers 
+    |   |   |   |-- index.ts
+    |   |   |   |-- modules
+    |   |   |       |-- ...*.ts
+    |   |   |-- types                   ts类型定义
+    |   |       |-- ...*.ts
+    |   |-- utils                        公共方法库
+    |       |-- request.ts                 网络请求通用方法
+    |       |-- validator.ts               reg 校验
+    |-- types                            全局 types 
+        |-- request.d.ts
+```
 
 ## 命名规范
 

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-10 23:56:40
- * @LastEditTime: 2022-04-14 10:26:21
+ * @LastEditTime: 2022-04-14 16:52:52
  * @LastEditors: liuxi
  * @Description: 主题切换控制组件
  * @FilePath: /taro3-weapp/src/pages/personalCenter/ThemeTriggerSwitch.tsx
@@ -21,7 +21,7 @@ const ThemeTriggerSwitch: FC<IProps> = (): ReactElement => {
   const handleChangeThemeMode = useCallback(() => {
     const themeState = isLight ? DarkTheme : LightTheme;
     setTheme(themeState);
-    console.log('themeState===',themeState)
+
     const { background: backgroundColor, color } = themeState.theme;
     //顶部导航栏也一同变化 只是当前页面 其他页还需设置
     setNavigationBarColor({
@@ -33,6 +33,7 @@ const ThemeTriggerSwitch: FC<IProps> = (): ReactElement => {
   return (
     <Container>
       <Text>{!isLight ? "夜间" : "日间"}模式</Text>
+        {/* @ts-ignore */}
       <Switch color={theme.primary} checked={isLight} onChange={handleChangeThemeMode} />
     </Container>
   );

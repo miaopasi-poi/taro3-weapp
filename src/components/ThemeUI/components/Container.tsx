@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-11 00:00:23
- * @LastEditTime: 2022-04-14 10:00:20
+ * @LastEditTime: 2022-04-14 16:53:39
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/src/components/ThemeUI/components/Container.tsx
@@ -22,5 +22,6 @@ export const Container: IProps = (props) => {
     })
   })
 
+  // @ts-ignore
   return <View {...props} />
 }

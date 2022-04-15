@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-10 23:59:45
- * @LastEditTime: 2022-04-14 10:00:12
+ * @LastEditTime: 2022-04-14 16:54:37
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/src/components/ThemeUI/components/View.tsx
@@ -15,9 +15,9 @@ export type IProps = ComponentType<ViewProps & { fill?: boolean }>
 
 export const View: IProps = ({ children, fill, style, ...props }): ReactElement => {
   const { theme } = useThemeState()
-
-  return (
-    <TView
+  
+  // @ts-ignore
+  return <TView
       style={{
         backgroundColor: theme.background,
         width: fill ? "100vw" : undefined,
@@ -26,8 +26,7 @@ export const View: IProps = ({ children, fill, style, ...props }): ReactElement 
         ...style as any,
       }}
       {...props}
-    >
-      {children}
-    </TView>
-  )
+  >
+    {children}
+  </TView>
 }

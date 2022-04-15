@@ -15,17 +15,15 @@ type Props = ComponentType<TextProps & { children: any; bold?: boolean }>
 
 export const Text: Props = ({ children, style, bold, ...props }): ReactElement => {
   const { theme } = useThemeState()
-
-  return (
-    <TText
-      style={{
-        color: theme.color,
-        fontWeight: bold ? "bold" : undefined,
-        ...style as any,
-      }}
-      {...props}
-    >
-      {children}
+  // @ts-ignore
+  return <TText
+            style={{
+              color: theme.color,
+              fontWeight: bold ? "bold" : undefined,
+              ...style as any,
+            }}
+            {...props}
+        >
+        {children}
     </TText>
-  )
 };
