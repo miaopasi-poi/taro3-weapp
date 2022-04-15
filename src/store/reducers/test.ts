@@ -1,14 +1,14 @@
 /*
  * @Author: liuxi
  * @Date: 2022-04-14 18:15:26
- * @LastEditTime: 2022-04-15 11:50:10
+ * @LastEditTime: 2022-04-15 15:03:24
  * @LastEditors: liuxi
  * @Description: reducer编写示例
  * @FilePath: /taro3-weapp/src/store/reducers/test.ts
  */
 
 import * as types from '../actionsConstant';
-import { ToItemType } from '../types/test';
+import { ToDoItemType } from '../data';
 
 export const test = (state = [], action) => {
     switch (action.type) {
@@ -22,7 +22,7 @@ export const test = (state = [], action) => {
           }
         ]
       case types.TEST_TOGGLE_TODO:
-        return state.map((todo: ToItemType) =>
+        return state.map((todo: ToDoItemType) =>
           (todo.id === action.id) 
             ? {...todo, completed: !todo.completed}
             : todo

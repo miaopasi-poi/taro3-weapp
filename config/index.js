@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-06 23:21:15
- * @LastEditTime: 2022-04-14 16:17:10
+ * @LastEditTime: 2022-04-15 15:00:40
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/config/index.js
@@ -23,6 +23,7 @@ const config = {
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
     '@/store': path.resolve(__dirname, '..', 'src/store'),
+    '@/types': path.resolve(__dirname, '..', 'src/store'),
   },
   defineConstants: {
   },

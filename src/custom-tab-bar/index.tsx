@@ -1,34 +1,38 @@
 /*
  * @Author: your name
  * @Date: 2022-04-07 17:27:48
- * @LastEditTime: 2022-04-14 10:01:37
+ * @LastEditTime: 2022-04-15 15:52:04
  * @LastEditors: liuxi
- * @Description: 
+ * @Description: 自定义tabBar
  * @FilePath: /taro3-weapp/src/custom-tab-bar/index.tsx
  */
 
 import Taro from '@tarojs/taro';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { AtTabBar } from 'taro-ui';
 import { useThemeState } from '@/components/ThemeUI';
 import './index.scss'
 
 function CustomTabBar(){
-    const [current, setCurrent] = useState(0);
+    const [current, setCurrent] = useState(1);
     const tabPath = [
         'pages/index/index',
-        'pages/personalCenter/index',
+        'pages/mine/index',
     ]
 
     const { theme } = useThemeState();
 
-    const switchTab = (index) => {
-        setCurrent(index)
-        Taro.switchTab({
-            url: '/'+ tabPath[index]
-        })
-    }
+    useEffect(() => {
+        switchTab(current);
+    }, [current]);
 
+    const switchTab = (index) => {
+        setCurrent(index);
+        Taro.switchTab({
+            url: '/'+ tabPath[index],
+        });
+    }
+    // @ts-ignore
     return <AtTabBar
             fixed
             tabList={[

@@ -103,7 +103,7 @@ yarn add node-sass
 1. 文件和夹命名：
    - 普通文件：
    规则: 驼峰命名
-   eg: 我的页面文件夹 personalCenter
+   eg: 我的页面文件夹 mine
    - components组件
    规则: 帕斯卡命名
    eg: 主题 ThemeUI

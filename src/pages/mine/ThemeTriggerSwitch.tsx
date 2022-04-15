@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-04-14 16:52:52
  * @LastEditors: liuxi
  * @Description: 主题切换控制组件
- * @FilePath: /taro3-weapp/src/pages/personalCenter/ThemeTriggerSwitch.tsx
+ * @FilePath: /taro3-weapp/src/pages/mine/ThemeTriggerSwitch.tsx
  */
 import { styled } from "linaria/react";
 import { setNavigationBarColor } from "@tarojs/taro";

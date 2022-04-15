@@ -1,0 +1,15 @@
+.user-information {
+    padding-left: 10px;
+    display: flex;
+    // border: 1px solid antiquewhite;
+    &__info {
+        padding-left: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+    }
+    .username {
+        font-weight: bold;
+    }
+}
