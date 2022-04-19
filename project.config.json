@@ -18,7 +18,7 @@
         "scopeDataCheck": false,
         "uglifyFileName": false,
         "checkInvalidKey": true,
-        "checkSiteMap": true,
+        "checkSiteMap": false,
         "uploadWithSourceMap": true,
         "compileHotReLoad": false,
         "lazyloadPlaceholderEnable": false,
@@ -42,5 +42,31 @@
         "ignoreUploadUnusedFiles": true
     },
     "compileType": "miniprogram",
-    "condition": {}
+    "condition": {},
+    "miniprogram": {
+        "current": -1,
+        "list": [
+            {
+              "id": 0,
+              "name": "个人中心",
+              "pathName": "pages/mine/index",
+              "query": "",
+              "scene": null
+            },
+            {
+                "id": 2,
+                "name": "首页",
+                "pathName": "pages/index/index",
+                "query": "",
+                "scene": null
+            },
+            {
+                "id": 3,
+                "name": "登陆",
+                "pathName": "spkMine/pages/login",
+                "query": "",
+                "scene": null
+            }
+        ]
+    }
 }

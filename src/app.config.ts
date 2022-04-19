@@ -1,20 +1,25 @@
 /*
  * @Author: your name
  * @Date: 2022-04-06 23:21:15
- * @LastEditTime: 2022-04-15 16:36:39
+ * @LastEditTime: 2022-04-15 17:22:15
  * @LastEditors: liuxi
  * @Description: 
  * @FilePath: /taro3-weapp/src/app.config.ts
  */
+
 export default defineAppConfig({
   pages: [
     'pages/index/index',
     'pages/mine/index',
   ],
-  subpackages: [
+  subPackages: [
     {
       root: 'spkMine',
-      pages: [],
+      name: 'mine',
+      pages: [
+        'pages/login',//登录页
+        'pages/register',//登录页
+      ],
     }
   ],
   window: {
@@ -36,5 +41,6 @@ export default defineAppConfig({
         }
     ],
   },
-  usingComponents: {},
+  usingComponents: {
+  },
 })

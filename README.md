@@ -40,11 +40,11 @@ yarn add node-sass
 ```
 
 #### 2.安装项目依赖
-`npm install`
+`yarn install`
 
 #### 3.运行项目
-`npm run dev:weapp`
-
+`yarn run dev:weapp`
+如果因为node版本导致报错可使用`taro build --type weapp --watch`
 #### 4.dist目录导入IDE
 
 #### 5.IDE配置

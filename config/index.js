@@ -38,13 +38,13 @@ const config = {
     enable: true,
   },
   mini: {
-    optimizeMainPackage: {
-      enable: true,
-      exclude: [
-        path.resolve(__dirname, 'moduleName.js'),
-        (module) => module.resource.indexOf('moduleName') >= 0
-      ]
-    },
+    // optimizeMainPackage: {
+    //   enable: true,
+    //   exclude: [
+    //     path.resolve(__dirname, 'moduleName.js'),
+    //     (module) => module.resource.indexOf('moduleName') >= 0
+    //   ]
+    // },
     webpackChain(chain, webpack) {
       // linaria/loader 选项详见 https://github.com/callstack/linaria/blob/master/docs/BUNDLERS_INTEGRATION.md#webpack
       chain.module
